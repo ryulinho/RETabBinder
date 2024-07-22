@@ -88,7 +88,8 @@ function RE:OnEvent(self, event, ...)
 			RE.Fail = true
 			return
 		end
-		local PVPType = GetZonePVPInfo()
+		local pvpType, isSubZonePvP, factionName = C_PvP.GetZonePVPInfo()
+		local PVPType = pvpType
 		local _, ZoneType = IsInInstance()
 
 		local TargetKey = GetBindingKey("TARGETNEARESTENEMYPLAYER")
